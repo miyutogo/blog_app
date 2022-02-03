@@ -1,0 +1,20 @@
+<div class='container'>
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Categories</h1>
+
+  <div class='container m-0 p-0 d-flex justify-content-between mainCatCon' id="categories">
+  
+    <div class='container catConSub2 bg-danger'>
+          <% @categories.each do |category| %>
+            <%= render category %>
+          <% end %>
+    </div>
+
+  </div>
+
+
+      <%= link_to "New category", new_category_path %>
+      
+</div>
+

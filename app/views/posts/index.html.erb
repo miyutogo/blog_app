@@ -1,0 +1,52 @@
+<div class='container d-flex flex-column'>
+  <div><p style="color: green"><%= notice %></p></div>
+
+  <div>
+       
+
+  
+<%
+=begin%>
+   <div>
+      <% Category.where(display_in_navbar: true).each do |cat| %>
+           <%= link_to cat.name, posts_path(category: cat.name) %>
+      <% end %>
+  </div> 
+<%
+=end%>
+
+  <div class='container d-flex flex-row mx-auto'>
+    
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 bg-warning rounded"> 
+          <h1>Personal Blog </h1> 
+      </div>
+    </div>
+    <div class='row'>
+    <br>
+    </div>
+    <div class='row '>
+      <div class="col-3 d-flex flex-column bg-secondary rounded">
+        <h4><center> Categories </center> </h4>
+        <% Category.all.each do |cat| %>
+            <%= link_to cat.name, posts_path(category: cat.name) %>
+        <% end %>
+      </div>
+      <div class='col-md-8 offset-md-1 bg-danger rounded'>
+        <h4><center> Blog Post </center> </h4>
+        <% @posts.each do |post| %>
+          <div class='container d-flex flex-column mx-auto'>
+               <strong> <p> <%= post.title %> </p> </strong>
+               <p> <%= post.body %> </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
