@@ -1,20 +1,22 @@
 <div class='container'>
   <p style="color: green"><%= notice %></p>
 
-  <h1>Categories</h1>
+  <h1>Categories | <%= link_to "Add Category", new_category_path , class:'text-decoration-none' %></h1>
 
   <div class='container m-0 p-0 d-flex justify-content-between mainCatCon' id="categories">
   
-    <div class='container catConSub2 bg-danger'>
+    <div class='container col-sm-12  col-lg-12 border  border-primary  rounded'>
           <% @categories.each do |category| %>
+            <p class='text-decoration-none'>
             <%= render category %>
+            </p>
           <% end %>
     </div>
 
   </div>
 
 
-      <%= link_to "New category", new_category_path %>
+      
       
 </div>
 

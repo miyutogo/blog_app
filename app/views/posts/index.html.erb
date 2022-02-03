@@ -30,13 +30,15 @@
     <br>
     </div>
     <div class='row '>
-      <div class="col-3 d-flex flex-column bg-secondary rounded">
+      <div class="col-sm-12   col-lg-3  d-flex  flex-column   border  border-primary  rounded">
         <h4><center> Categories </center> </h4>
         <% Category.all.each do |cat| %>
-            <%= link_to cat.name, posts_path(category: cat.name) %>
+          <p>
+            <%= link_to cat.name, posts_path(category: cat.name) , class:'text-decoration-none' %>
+          </p>
         <% end %>
       </div>
-      <div class='col-md-8 offset-md-1 bg-danger rounded'>
+      <div class='col-sm-12 col-lg-8 offset-md-1 border border-primary rounded'>
         <h4><center> Blog Post </center> </h4>
         <% @posts.each do |post| %>
           <div class='container d-flex flex-column mx-auto'>
